@@ -149,7 +149,7 @@
               <av:Size x:Key="ShapeSize">200,68.8</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="1795.2,6484" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap:VirtualizedContainerService.HintSize="1687.2,6333.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="cryptoDataTable" />
             </Sequence.Variables>
@@ -158,9 +158,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[crypto]" sap:VirtualizedContainerService.HintSize="1753.6,6391.2" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[crypto]" sap:VirtualizedContainerService.HintSize="1645.6,6240.8" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="708,3844" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="708,4000" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="s:String[]" Name="cryptoArray" />
                     <Variable x:TypeArguments="x:String" Name="cryptoInput" />
@@ -250,25 +250,25 @@
                       </ActivityAction>
                     </ui:ExcelApplicationScope.Body>
                   </ui:ExcelApplicationScope>
-                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: Bitcoin price, BTC chart, and market cap | CoinGecko" sap:VirtualizedContainerService.HintSize="666.4,2409.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" Version="V1">
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: Bitcoin price, BTC chart, and market cap | CoinGecko" sap:VirtualizedContainerService.HintSize="666.4,2565.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" Version="V1">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="632.8,2192.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="632.8,2348.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[cryptoDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="591.2,2098.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                          <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[cryptoDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="591.2,2254.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="541.6,1948" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="541.6,2104" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="c24hrCap" />
                                     <Variable x:TypeArguments="x:String" Name="cMarketCap" />
@@ -280,7 +280,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="500,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[&quot;https://www.coingecko.com/en/coins/&quot;+row.Item(&quot;name&quot;).ToString]" />
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="500,1731.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="500,1887.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -335,6 +335,13 @@
                                         </Sequence>
                                       </Sequence>
                                     </Sequence>
+                                    <ui:WriteCell Cell="[&quot;A&quot;+count2.ToString+&quot;:M&quot;+count2.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="458.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="Sheet1" WorkbookPath="D:\rpa\adrash\crypto.xlsx">
+                                      <ui:WriteCell.Text>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <Literal x:TypeArguments="x:String" Value="" />
+                                        </InArgument>
+                                      </ui:WriteCell.Text>
+                                    </ui:WriteCell>
                                     <Assign sap:VirtualizedContainerService.HintSize="458.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_11">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:Int32">[count2]</OutArgument>
@@ -358,9 +365,9 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <If Condition="[stock]" sap:VirtualizedContainerService.HintSize="1001.6,6241.6" sap2010:WorkflowViewState.IdRef="If_3">
+                <If Condition="[stock]" sap:VirtualizedContainerService.HintSize="893.6,6091.2" sap2010:WorkflowViewState.IdRef="If_3">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="857.6,6092" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                    <Sequence sap:VirtualizedContainerService.HintSize="749.6,5941.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="s:String[]" Name="cryptoArray" />
                         <Variable x:TypeArguments="x:String" Name="cryptoInput" />
@@ -373,12 +380,12 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InputDialog Label="{x:Null}" Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="816,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Title="enter name">
+                      <ui:InputDialog Label="{x:Null}" Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="708,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Title="enter name">
                         <ui:InputDialog.Result>
                           <OutArgument x:TypeArguments="x:String">[stockInput]</OutArgument>
                         </ui:InputDialog.Result>
                       </ui:InputDialog>
-                      <Assign sap:VirtualizedContainerService.HintSize="816,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                      <Assign sap:VirtualizedContainerService.HintSize="708,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:String[]">[stockArray]</OutArgument>
                         </Assign.To>
@@ -386,7 +393,7 @@
                           <InArgument x:TypeArguments="s:String[]">[stockInput.Split(","c)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="816,617.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[stockArray]">
+                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="708,617.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[stockArray]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
@@ -427,7 +434,7 @@
                           </ActivityAction>
                         </ui:ForEach.Body>
                       </ui:ForEach>
-                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="816,262.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="D:\rpa\adrash\stock.xlsx">
+                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="708,262.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="D:\rpa\adrash\stock.xlsx">
                         <ui:ExcelApplicationScope.Body>
                           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                             <ActivityAction.Argument>
@@ -450,25 +457,25 @@
                           </ActivityAction>
                         </ui:ExcelApplicationScope.Body>
                       </ui:ExcelApplicationScope>
-                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: Bitcoin price, BTC chart, and market cap | CoinGecko" sap:VirtualizedContainerService.HintSize="816,4657.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" Version="V1">
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Firefox: Bitcoin price, BTC chart, and market cap | CoinGecko" sap:VirtualizedContainerService.HintSize="708,4507.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" Version="V1">
                         <uix:NApplicationCard.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="782.4,4440.8" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="674.4,4290.4" sap2010:WorkflowViewState.IdRef="Sequence_27">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[stockDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="740.8,4346.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[stockDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="632.8,4196" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                 <ui:ForEachRow.Body>
                                   <ActivityAction x:TypeArguments="sd:DataRow">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="691.2,4196" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="583.2,4045.6" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="c24hrCap" />
                                         <Variable x:TypeArguments="x:String" Name="cMarketCap" />
@@ -479,20 +486,20 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="649.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[&quot;https://www.nseindia.com/get-quotes/equity?symbol=&quot;+row.Item(&quot;name&quot;).ToString.ToUpper]" />
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="649.6,3979.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                      <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="541.6,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[&quot;https://www.nseindia.com/get-quotes/equity?symbol=&quot;+row.Item(&quot;name&quot;).ToString.ToUpper]" />
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="541.6,3828.8" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="608,3884.8" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="500,3734.4" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="566.4,764" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="458.4,764" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -507,13 +514,13 @@
                                             </uix:NTypeInto>
                                             <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts " sap:VirtualizedContainerService.HintSize="333.6,149.6" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(enter)][u(hk)]" />
                                           </Sequence>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="566.4,2986.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                          <Sequence sap:VirtualizedContainerService.HintSize="458.4,2836" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Table Extraction" sap:VirtualizedContainerService.HintSize="524.8,1114.4" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                            <Sequence DisplayName="Table Extraction" sap:VirtualizedContainerService.HintSize="416.8,808" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="sd:DataTable" Name="cryptoExtractTable" />
                                                 <Variable x:TypeArguments="sd:DataTable" Name="TpCryptoDataTable" />
@@ -525,23 +532,18 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <uix:NExtractData ContinueOnError="True" DataTable="[stockTable1]" DisplayName="Extract Table Data" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="483.2,167.2" sap2010:WorkflowViewState.IdRef="NExtractData_2" MaximumResults="100">
+                                              <uix:NExtractData ContinueOnError="True" DataTable="[stockTable1]" DisplayName="Extract Table Data" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="333.6,167.2" sap2010:WorkflowViewState.IdRef="NExtractData_2" MaximumResults="100">
                                                 <uix:NExtractData.Target>
                                                   <uix:TargetAnchorable DesignTimeRectangle="500, 746, 1175, 58" FriendlyName="'Prev. Close'" FullSelectorArgument="&lt;webctrl id='priceInfoTable' tag='TABLE' /&gt;" InformativeScreenshot="00aa108d3809aca7f58772ea6af4dfb9.png" ScopeSelectorArgument="&lt;html app='firefox.exe' title='* Live NSE News, Quotes, Tips – NSE India' /&gt;" SearchSteps="Selector" Text="Prev. Close&#xA;                                                                    Open&#xA;              " TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TABLE' type='' /&gt;" />
                                                 </uix:NExtractData.Target>
                                               </uix:NExtractData>
-                                              <ui:OutputDataTable DataTable="[stockTable1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[stockString]" />
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[stockString]" />
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[stockTable1.Rows.Count.ToString]" />
-                                              <ui:WriteRange AddHeaders="False" DataTable="[stockTable1]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="483.2,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" StartingCell="[&quot;B&quot;+count2.ToString+&quot;:K&quot;+count2.ToString]" WorkbookPath="D:\rpa\adrash\stock.xlsx" />
-                                              <ui:ClearDataTable DataTable="[stockTable1]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="483.2,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-                                              <If Condition="[stockTable1.Rows.Count &lt; 1]" sap:VirtualizedContainerService.HintSize="483.2,267.2" sap2010:WorkflowViewState.IdRef="If_6">
-                                                <If.Then>
-                                                  <ui:WriteCell Cell="[&quot;B&quot;+count2.ToString+&quot;:M&quot;+count2.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="no data" WorkbookPath="D:\rpa\adrash\stock.xlsx" />
-                                                </If.Then>
-                                              </If>
+                                              <ui:OutputDataTable DataTable="[stockTable1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[stockString]" />
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[stockString]" />
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[stockTable1.Rows.Count.ToString]" />
+                                              <ui:WriteRange AddHeaders="False" DataTable="[stockTable1]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" StartingCell="[&quot;B&quot;+count2.ToString+&quot;:K&quot;+count2.ToString]" WorkbookPath="D:\rpa\adrash\stock.xlsx" />
+                                              <ui:ClearDataTable DataTable="[stockTable1]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
                                             </Sequence>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="524.8,1737.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="416.8,1893.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -587,6 +589,13 @@
                                                 <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DataTable="[stockTable3]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
                                                 <ui:WriteRange AddHeaders="False" DataTable="[stockTable3]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_8" SheetName="Sheet1" StartingCell="[&quot;I&quot;+count2.ToString+&quot;:M&quot;+count2.ToString]" WorkbookPath="D:\rpa\adrash\stock.xlsx" />
                                               </Sequence>
+                                              <ui:WriteCell Cell="[&quot;A&quot;+count2.ToString+&quot;:M&quot;+count2.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="375.2,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" WorkbookPath="D:\rpa\adrash\stock.xlsx">
+                                                <ui:WriteCell.Text>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                  </InArgument>
+                                                </ui:WriteCell.Text>
+                                              </ui:WriteCell>
                                               <Assign sap:VirtualizedContainerService.HintSize="375.2,61.6" sap2010:WorkflowViewState.IdRef="Assign_14">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:Int32">[count2]</OutArgument>
